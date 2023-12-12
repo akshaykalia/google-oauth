@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  django:
+    labels:
+      shipyard.route: '/'
+    build: .
+    ports:
+      - '8080:8080'
+    environment:
+      - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
+      - GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET}
+      - GOOGLE_CLIENT_CALLBACK=${GOOGLE_CLIENT_CALLBACK}

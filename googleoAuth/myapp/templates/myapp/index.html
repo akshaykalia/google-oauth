@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Sign-In Example</title>
+    <!-- Include Google Sign-In client library -->
+    <script src="https://accounts.google.com/gsi/client" async></script>
+</head>
+<body>
+
+<h1>Google Sign-In Example</h1>
+
+<div id="g_id_onload"
+    data-client_id="{{ GOOGLE_CLIENT_ID }}"
+    data-callback="onSignIn"
+    data-auto_prompt="false">
+</div>
+<div class="g_id_signin"
+    data-type="standard"
+    data-size="large"
+    data-theme="outline"
+    data-text="sign_in_with"
+    data-shape="rectangular"
+    data-logo_alignment="left">
+</div>
+
+<!-- Script to handle sign-in success -->
+<script>
+    function onSignIn(googleUser) {
+        // Get user details
+        var profile = googleUser.getBasicProfile();
+        console.log('ID: ' + profile.getId());
+        console.log('Name: ' + profile.getName());
+        console.log('Email: ' + profile.getEmail());
+    }
+</script>
+
+</body>
+</html>
