@@ -35,4 +35,4 @@ ADD googleoAuth ./googleoAuth
 RUN poetry install
 
 # Set the default command
-CMD ["poetry", "run", "python", "googleoAuth/manage.py", "runserver", "0:8080"]
+CMD ["poetry", "run", "python", "googleoAuth/manage.py", "runserver", "0:8000"]
